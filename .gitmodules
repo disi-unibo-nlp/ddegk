@@ -1,0 +1,3 @@
+[submodule "DeepEventMine"]
+	path = DeepEventMine
+	url = https://github.com/aistairc/DeepEventMine
