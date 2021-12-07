@@ -17,7 +17,7 @@ Anchor-based target event graph encoder for divergence prediction. Attention lay
 
 ## Datasets
 
-We applied and evaluated DDEGK on nine real-world datasets originally designed for biomedical event extraction, mainly introduced by the ongoing BioNLP-ST series: ST09, GE11, EPI11, ID11, MLEE, GE13, CG13, PC13, and GRO13. Download [original corpora]() (≈6GB of uncompressed <.txt, .a1, .a2> files) and [samples]() used within the experiments. 
+We applied and evaluated DDEGK on nine real-world datasets originally designed for biomedical event extraction, mainly introduced by the ongoing BioNLP-ST series: ST09, GE11, EPI11, ID11, MLEE, GE13, CG13, PC13, and GRO13. Download [original corpora](https://drive.google.com/file/d/1e9SZgm2IMc9vMZ4b7aulYa5W8g24mLjh/view?usp=sharing) (≈6GB of uncompressed <.txt, .a1, .a2> files) and [samples](https://drive.google.com/file/d/18_VHLyTo2SRM8UwKa-dPO2SLPZhwkCY_/view?usp=sharing) used within the experiments. 
 
 
 
