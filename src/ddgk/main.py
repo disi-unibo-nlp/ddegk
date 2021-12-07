@@ -49,16 +49,19 @@ PROTO_CHOICE_TYPE = 'bytype' # Choose one graph for each event type (ignore num_
 PROTO_CHOICE_RAND_TYPE = 'randtype' # Choose num_sources random graphs, balanced from all event types
 PROTO_CHOICE_VALUES = [PROTO_CHOICE_RAND, PROTO_CHOICE_TYPE, PROTO_CHOICE_RAND_TYPE]
 
-def parse_args():
-  parser = argparse.ArgumentParser()
+def add_hypeparameters_arguments(parser):
   parser.add_argument('--num-prototypes', type=int, required=False, default=16)
   parser.add_argument('--node-embedding-coeff', type=float, required=True, help='The coefficient for the loss related to node embeddings')
   parser.add_argument('--node-label-coeff', type=float, required=True, help='The coefficient for the loss related to node discrete labels')
   parser.add_argument('--edge-label-coeff', type=float, required=True, help='The coefficien or the loss related to edge labels')
-  parser.add_argument('--graphs-file', type=str, required=True, help='JSON file containing the graphs definitions')
-  parser.add_argument('--working-dir-prefix', type=str, required=False, default='', help='Base directory where to create the working directory')
   parser.add_argument('--prototype-choice', type=str, required=True)
   parser.add_argument('--num-threads', default=32, type=int)
+
+def parse_args():
+  parser = argparse.ArgumentParser()
+  add_hypeparameters_arguments(parser)
+  parser.add_argument('--graphs-file', type=str, required=True, help='JSON file containing the graphs definitions')
+  parser.add_argument('--working-dir-prefix', type=str, required=False, default='', help='Base directory where to create the working directory')
   args = parser.parse_args()
   args.working_dir = os.path.join(args.working_dir_prefix, f'SEMCOEFF_{args.node_embedding_coeff}_{args.node_label_coeff}_{args.edge_label_coeff}_data')
   assert args.num_prototypes > 0
@@ -92,9 +95,8 @@ def choose_prototypes(graphs, args):
   else:
     raise Exception("Invalid prototype choice strategy")
 
-def main():
+def main(args):
   random.seed(42)
-  args = parse_args()
 
   print(f'Working in "{args.working_dir}"')
 
@@ -142,4 +144,5 @@ def main():
   output_file.close()
 
 if __name__ == '__main__':
-  main()
+  args = parse_args()
+  main(args)

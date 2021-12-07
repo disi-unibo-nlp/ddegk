@@ -4,12 +4,13 @@ import argparse
 import json
 from tqdm import tqdm
 
-def main():
+def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--dataset', type=str, required=True)
     parser.add_argument('--batchsize', type=int, default=2)
-    args = parser.parse_args()
+    return parser.parse_args()
 
+def main(args):
     print('Dataset:   ', args.dataset)
     print('Batch size:', args.batchsize)
 
@@ -38,4 +39,5 @@ def main():
             json.dump(data, output_file)
 
 if __name__ == '__main__':
-    main()
+    args = parse_args()
+    main(args)
