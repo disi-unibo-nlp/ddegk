@@ -15,10 +15,16 @@ DDEGK overview. Structural and semantic divergence scores from a set of anchor e
 <img alt="DDEGK divergence prediction with cross-graph attention" src="images/ddegk_cross_graph_attention.png" width="500">
 Anchor-based target event graph encoder for divergence prediction. Attention layers map the target event graph nodes onto the anchor graph, being aware of node and edge attributes.
 
+## Datasets
+
+We applied and evaluated DDEGK on nine real-world datasets originally designed for biomedical event extraction, mainly introduced by the ongoing BioNLP-ST series: ST09, GE11, EPI11, ID11, MLEE, GE13, CG13, PC13, and GRO13. Download [original corpora]() (≈6GB of uncompressed <.txt, .a1, .a2> files) and [samples]() used within the experiments. 
+
+
+
 ## Get started
 
 
-## Reference
+## Cite
 
 If you found this repository useful, please consider citing the following paper:
 
@@ -31,3 +37,5 @@ Frisoni G., Moro G., Carlassare G. and Carbonaro A. **"Unsupervised Event Graph 
       journal={Sensors},
       year={2021}
     }
+
+We thank Eleonora Bertoni for her precious help in preparing the datasets, implementing the baseline, and conducting the experiments.
