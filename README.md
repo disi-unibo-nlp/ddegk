@@ -19,10 +19,22 @@ Anchor-based target event graph encoder for divergence prediction. Attention lay
 
 We applied and evaluated DDEGK on nine real-world datasets originally designed for biomedical event extraction, mainly introduced by the ongoing BioNLP-ST series: ST09, GE11, EPI11, ID11, MLEE, GE13, CG13, PC13, and GRO13. Download [original corpora](https://drive.google.com/file/d/1e9SZgm2IMc9vMZ4b7aulYa5W8g24mLjh/view?usp=sharing) (≈6GB of uncompressed <.txt, .a1, .a2> files) and [samples](https://drive.google.com/file/d/18_VHLyTo2SRM8UwKa-dPO2SLPZhwkCY_/view?usp=sharing) used within the experiments. 
 
-
-
 ## Get started
 
+### Installing dependencies
+Dependencies are listed in the file `requirements.txt`, they can be installed with `pip install -r requirements.txt`.  
+**It is necessary to use Python 3.6**.
+
+### Compute event graph embeddings
+1. _Prepare the dataset_. Create a folder under `data` named as your dataset. It must contain a list of [BioNLP Standoff](http://2011.bionlp-st.org/home/file-formats) files, i.e., triples composed of a text document (`.txt`), entity (`.a1`), and event (`.a2`) annotations. Alternatively, it is possible to provide `.ann` files.
+2. _Run DDEGK_. Execute `python -m src.events_embedding --help` to see all the available parameters.
+3. _Analyze the results_. The output will be saved in the folder `results/<datasetname>/ddegk/results.json`. The provided Jupyter notebooks can be used to visualize the results.
+
+An example command:
+
+```
+python -m src.events_embedding --dataset=test --node-embedding-coeff=1 --node-label-coeff=1 --edge-label-coeff=1 --prototype-choice=random --num-prototypes=2
+```
 
 ## Cite
 
