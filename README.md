@@ -1,6 +1,6 @@
 # DDEGK
 
-Code and data accompanying the MDPI Sensors 2020 paper ["Unsupervised Event Graph Representation and Similarity Learning on Biomedical Literature"](TODO).
+Code and data accompanying the MDPI Sensors 2020 paper ["Unsupervised Event Graph Representation and Similarity Learning on Biomedical Literature"](https://www.mdpi.com/1424-8220/22/1/3).
 
 DDEGK is an unsupervised and inductive method capable of mapping events into low-dimensional vectors (task-agnostic and whole-graph embeddings), reflecting their structural and semantic similarities. It is designed to be highly interpretable, with a cross-graph isomorphic attention mechanism trained to preserve node and edge attributes. By merging deep learning architectures and natural language processing with symbolic structures and graph theory, it represents a powerful tool for automatically recognizing similarities between biomedical interactions mentioned by researchers in scientific publications, enabling their aggregation, quantification, and retrieval. It leverages deep graph kernel without requiring computing the entire kernel matrix, providing greater scalability. Specifically, DDEGK compares events against a small set of anchor ones, learning embeddings based on target-anchor divergences. Thus learned embeddings make event-centered operations simpler and faster than comparable operations on graphs.
 
